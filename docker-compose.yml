@@ -1,0 +1,12 @@
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: my-v0-web
+    ports:
+      - "21400:3000"   # Puerto externo permitido -> puerto interno Next
+    environment:
+      NODE_ENV: "production"
+      PORT: "3000"
+    restart: unless-stopped
