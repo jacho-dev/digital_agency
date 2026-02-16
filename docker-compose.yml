@@ -5,8 +5,10 @@ services:
       dockerfile: Dockerfile
     container_name: my-v0-web
     ports:
-      - "21400:3000"   # Puerto externo permitido -> puerto interno Next
+      - "3000:3000"
     environment:
       NODE_ENV: "production"
       PORT: "3000"
+    env_file:
+      - .env
     restart: unless-stopped
